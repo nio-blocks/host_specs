@@ -24,6 +24,9 @@ Commands
 - **Python Information**: Returns information regarding the running python version.  This includes the compiler, version, implementation type, and architecture.
 - **Processor Type**: Returns the processor type and number of cores.
 
+Dependencies
+--------
+psutil
 
 Output Examples
 ---------------
