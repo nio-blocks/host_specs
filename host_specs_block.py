@@ -44,10 +44,6 @@ class HostSpecs(Block):
         plat = self.platform()
         self.notify_signals([Signal(plat)])
 
-    def timestamp(self):
-        '''returns the current system timestamp'''
-        return datetime.isoformat(datetime.utcnow())
-
     def platform(self):
         '''Returns platform data
         '''
@@ -69,14 +65,10 @@ class HostSpecs(Block):
             out = {key: getattr(platform, key)() for key in tuple(keys)}
 
         if self.menu().python():
-            out['python'] = {key: getattr(platform, "python_" + key)() for key in
-                            (
-                                'implementation',
-                                'compiler',
-                                'version',
-                                'version_tuple'
-                            )}
-            out['python']['architecture'] = int(ctypes.sizeof(ctypes.c_voidp) * 8)
+            out['python'] = {key: getattr(platform, "python_" + key)() for
+                             key in ('implementation', 'compiler', 'version')}
+            out['python']['architecture'] = \
+                int(ctypes.sizeof(ctypes.c_voidp) * 8)
         if self.menu().processor():
             out['processor'] = self._get_processor()
             out['cores'] = len(psutil.cpu_percent(percpu=True))
