@@ -1,4 +1,4 @@
-HostMetrics
+HostSpecs
 ===========
 Get general specifications of the nio instance host.
 
