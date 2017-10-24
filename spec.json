@@ -8,14 +8,14 @@
         "type": "ObjectType",
         "description": "Flags for turning off/on various specs.",
         "default": {
-          "python": false,
-          "processor": false,
-          "platform": false,
-          "machine": false,
-          "dist": false,
           "system": true,
+          "platform": false,
+          "dist": false,
+          "processor": false,
+          "machine": false,
           "os_version": false,
-          "hostname": false
+          "python": false,
+          "node": false
         }
       }
     },
