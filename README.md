@@ -5,6 +5,13 @@ Get general specifications of the nio instance host.
 Properties
 ----------
 - **menu**: Flags for turning off/on various specs.
+- **machine**: Returns the hardware system architecture.
+- **platform**: Returns the full platform information, including OS type, version, distribution in addition to hardware architecture.
+- **os_version**: Returns the operating system version.
+- **dist**: Returns the operating system distribution.
+- **system**: Returns the operating system type.
+- **python**: Returns information regarding the running python version.  This includes the compiler, version, implementation type, and architecture.
+- **processor**: Returns the processor type and number of cores.
 
 Inputs
 ------
@@ -14,15 +21,6 @@ Outputs
 -------
 - **default**: An attribute is added for each specification read. Attribute names are the menu name followed by an underscore and then then specific specification.
 
-Commands
---------
-- **Hardware Architecture**: Returns the hardware system architecture.
-- **Hardware Platform**: Returns the full platform information, including OS type, version, distribution in addition to hardware architecture.
-- **OS Version**: Returns the operating system version.
-- **OS Distribution**: Returns the operating system distribution.
-- **OS Type**: Returns the operating system type.
-- **Python Information**: Returns information regarding the running python version.  This includes the compiler, version, implementation type, and architecture.
-- **Processor Type**: Returns the processor type and number of cores.
 
 Dependencies
 --------

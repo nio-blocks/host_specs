@@ -1,47 +1,34 @@
 {
   "nio/HostSpecs": {
     "version": "0.1.0",
-    "description": "",
+    "description": "Get general specifications of the nio instance host.",
     "properties": {
       "menu": {
         "title": "Menu",
         "type": "ObjectType",
-        "description": "",
+        "description": "Flags for turning off/on various specs.",
         "default": {
+          "python": false,
           "processor": false,
-          "system": true,
-          "dist": false,
-          "machine": false,
           "platform": false,
-          "hostname": false,
-          "vs": false,
-          "python": false
+          "machine": false,
+          "dist": false,
+          "system": true,
+          "os_version": false,
+          "hostname": false
         }
       }
     },
     "inputs": {
       "default": {
-        "description": ""
+        "description": "Any list of signals"
       }
     },
     "outputs": {
       "default": {
-        "description": ""
+        "description": "An attribute is added for each specification read. Attribute names are the menu name followed by an underscore and then then specific specification."
       }
     },
-    "commands": {
-      "platform": {
-        "params": {},
-        "description": ""
-      },
-      "report": {
-        "params": {},
-        "description": ""
-      },
-      "timestamp": {
-        "params": {},
-        "description": ""
-      }
-    }
+    "commands": {}
   }
 }

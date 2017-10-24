@@ -14,23 +14,20 @@ from nio.properties.object import ObjectProperty
 from nio.properties.version import VersionProperty
 from nio.signal.base import Signal
 
-
-RETRY_LIMIT = 3
+#RETRY_LIMIT = 3
 
 
 class Menu(PropertyHolder):
     machine = BoolProperty(title='Hardware Architecture', default=False)
-    vs = BoolProperty(title='OS Version', default=False)
+    os_version = BoolProperty(title='OS Version', default=False)
     platform = BoolProperty(title='Hardware Platform', default=False)
     dist = BoolProperty(title='OS Distribution', default=False)
     system = BoolProperty(title='OS Type', default=True)
     python = BoolProperty(title='Python Information', default=False)
     processor = BoolProperty(title='Processor Type', default=False)
+    hostname = BoolProperty(title='Hostname', default=False)
 
 
-@command('platform')
-@command('timestamp')
-@command('report')
 class HostSpecs(Block):
 
     version = VersionProperty("0.1.0")
@@ -52,7 +49,7 @@ class HostSpecs(Block):
 
         if self.menu().machine():
             keys.append('machine')
-        if self.menu().vs():
+        if self.menu().os_version():
             keys.append('version')
         if self.menu().platform():
             keys.append('platform')
@@ -60,10 +57,11 @@ class HostSpecs(Block):
             keys.append('dist')
         if self.menu().system():
             keys.append('system')
-        print(keys)
+        if self.menu().hostname():
+            keys.append('node')
         if len(keys) > 0:
             out = {key: getattr(platform, key)() for key in tuple(keys)}
-
+        self.logger.error(out)
         if self.menu().python():
             out['python'] = {key: getattr(platform, "python_" + key)() for
                              key in ('implementation', 'compiler', 'version')}
