@@ -14,8 +14,6 @@ from nio.properties.object import ObjectProperty
 from nio.properties.version import VersionProperty
 from nio.signal.base import Signal
 
-#RETRY_LIMIT = 3
-
 
 class Menu(PropertyHolder):
     machine = BoolProperty(title='Hardware Architecture', default=False)

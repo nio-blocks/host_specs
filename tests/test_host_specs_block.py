@@ -8,6 +8,7 @@ from nio.util.discovery import not_discoverable
 
 from ..host_specs_block import HostSpecs
 
+
 @not_discoverable
 class EventMetrics(HostSpecs):
 
@@ -18,6 +19,7 @@ class EventMetrics(HostSpecs):
     def process_signals(self, signals):
         super().process_signals(signals)
         self._e.set()
+
 
 class TestHostSpecsBlock(NIOBlockTestCase):
 
