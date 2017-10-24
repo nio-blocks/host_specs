@@ -23,7 +23,6 @@ class Menu(PropertyHolder):
     system = BoolProperty(title='OS Type', default=True)
     python = BoolProperty(title='Python Information', default=False)
     processor = BoolProperty(title='Processor Type', default=False)
-    hostname = BoolProperty(title='Hostname', default=False)
 
 
 class HostSpecs(Block):
@@ -55,8 +54,6 @@ class HostSpecs(Block):
             keys.append('dist')
         if self.menu().system():
             keys.append('system')
-        if self.menu().hostname():
-            keys.append('node')
         if len(keys) > 0:
             out = {key: getattr(platform, key)() for key in tuple(keys)}
         self.logger.error(out)
