@@ -1,39 +1,46 @@
 {
-  "namespace/BlockName": {
-    "version": "1.0.0",
-    "description": "Description of the block.",
+  "nio/HostSpecs": {
+    "version": "0.1.0",
+    "description": "",
     "properties": {
-      "<property1>": {
-        "description": "Required description of the property"
-      },
-      "<property2>": {
-        "default": "Optional metadata with any key.",
-        "description": "Required description of the property"
+      "menu": {
+        "title": "Menu",
+        "type": "ObjectType",
+        "description": "",
+        "default": {
+          "processor": false,
+          "system": true,
+          "dist": false,
+          "machine": false,
+          "platform": false,
+          "hostname": false,
+          "vs": false,
+          "python": false
+        }
       }
     },
     "inputs": {
-      "<input1 | default>": {
-        "description": "Required description of the input"
-      },
-      "<input2>": {
-        "description": "Required description of the input"
+      "default": {
+        "description": ""
       }
     },
     "outputs": {
-      "<output1 | default>": {
-        "description": "Required description of the output"
-      },
-      "<output2>": {
-        "description": "Required description of the output"
+      "default": {
+        "description": ""
       }
     },
     "commands": {
-      "<command1>": {
-        "description": "Required description of the command",
-        "type": "Optional type and other metadata with any key."
+      "platform": {
+        "params": {},
+        "description": ""
       },
-      "<command2>": {
-        "description": "Required description of the command"
+      "report": {
+        "params": {},
+        "description": ""
+      },
+      "timestamp": {
+        "params": {},
+        "description": ""
       }
     }
   }
