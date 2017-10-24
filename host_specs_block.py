@@ -59,7 +59,6 @@ class HostSpecs(Block):
             keys.append('node')
         if len(keys) > 0:
             out = {key: getattr(platform, key)() for key in tuple(keys)}
-        self.logger.error(out)
         if self.menu().python():
             out['python'] = {key: getattr(platform, "python_" + key)() for
                              key in ('implementation', 'compiler', 'version')}
