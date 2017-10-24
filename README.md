@@ -21,6 +21,9 @@ Outputs
 -------
 - **default**: An attribute is added for each specification read. Attribute names are the menu name followed by an underscore and then then specific specification.
 
+Commands
+--------
+None
 
 Dependencies
 --------
