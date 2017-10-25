@@ -5,6 +5,7 @@ import re
 import subprocess
 from datetime import datetime
 import psutil
+from uuid import getnode as get_mac
 
 from nio.block.base import Block
 from nio.command import command
@@ -24,6 +25,7 @@ class Menu(PropertyHolder):
     python = BoolProperty(title='Python Information', default=False)
     processor = BoolProperty(title='Processor Type', default=False)
     node = BoolProperty(title='Host Network Name', default=False)
+    mac = BoolProperty(title='MAC Address', default=False)
 
 
 class HostSpecs(Block):
@@ -67,6 +69,8 @@ class HostSpecs(Block):
         if self.menu().processor():
             out['processor'] = self._get_processor()
             out['cores'] = len(psutil.cpu_percent(percpu=True))
+        if self.menu().mac():
+            out['MAC'] = hex(get_mac())[2:].upper()
 
         return out
 
