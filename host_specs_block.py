@@ -27,6 +27,7 @@ class Menu(PropertyHolder):
     node = BoolProperty(title='Host Network Name', default=False)
     mac = BoolProperty(title='MAC Address', default=False)
 
+
 class HostSpecs(Block):
 
     version = VersionProperty("0.1.0")
@@ -72,7 +73,6 @@ class HostSpecs(Block):
             out['MAC'] = hex(get_mac())[2:].upper()
 
         return out
-
 
     def _get_processor(self):
         '''Get type of processor
