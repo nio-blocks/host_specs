@@ -99,8 +99,8 @@ class HostSpecs(Block):
                 if "model name" in line:
                     out = re.sub(".*model name.*:", "", line, 1)
             if "Hz" not in out:
-                command_add = "cat /proc/cpuinfo"
-                clock_info = subprocess.check_output(command, shell=True)\
+                command_add = "lscpu | grep MHz"
+                clock_info = subprocess.check_output(command_add, shell=True)\
                     .strip().decode()
                 out = out + [n.split()[3] for n in clock_info.split('\n')] + "MHz"
 
