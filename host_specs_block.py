@@ -102,7 +102,7 @@ class HostSpecs(Block):
                 command_add = "lscpu | grep MHz"
                 clock_info = subprocess.check_output(command_add, shell=True)\
                     .strip().decode()
-                out = out + [n.split()[3] for n in clock_info.split('\n')] + "MHz"
+                out = out + [n for n in clock_info.split('\n')][0].split()[3] + "MHz"
 
         if out is None:
             return platform.processor()
